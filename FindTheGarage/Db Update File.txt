@@ -1,0 +1,7 @@
+﻿for help read this Link
+https://ef.readthedocs.io/en/staging/platforms/aspnetcore/existing-db.html
+
+
+1) Open Package Manage Console
+2) Select Project App.DataAccess From DropDown
+3) Scaffold-DbContext "Server=DESKTOP-JP01M5T\SQLEXPRESS;initial catalog=FindTheGarage;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
