@@ -16,7 +16,8 @@
 > - *AutoMapper* 
 > - *Fluent Validation*
 > - *Jwt Token For WebApis*
-> - *Exception Handler* 
+> - *Exception Handler Filter* 
+> - *Validator Action Filter*
 > - *Swagger for Api Docs*
 > - *Fcm for App Notification*
 > - *Email Sending service with Templates*
