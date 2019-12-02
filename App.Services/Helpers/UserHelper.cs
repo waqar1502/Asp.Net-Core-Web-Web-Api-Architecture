@@ -1,28 +1,24 @@
-﻿using App.DataAccess.Models;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using System;
-using System.Linq;
 using System.Security.Claims;
-using System.Security.Principal;
-using System.Threading.Tasks;
 
 namespace App.Services.Helpers
 {
     public class UserHelper : IUserHelper
     {
         #region Properties
-        private readonly FindTheGarageContext _dbContext;
+       /// private readonly FindTheGarageContext _dbContext;
         private readonly IHttpContextAccessor _httpContextAccessor;
         #endregion
 
         #region Constructors
         public UserHelper(
-                 IHttpContextAccessor httpContextAccessor,
-                 FindTheGarageContext dbContext
+                 IHttpContextAccessor httpContextAccessor
+              //   FindTheGarageContext dbContext
            )
         {
             _httpContextAccessor = httpContextAccessor;
-            _dbContext = dbContext;
+           // _dbContext = dbContext;
         }
         #endregion
 

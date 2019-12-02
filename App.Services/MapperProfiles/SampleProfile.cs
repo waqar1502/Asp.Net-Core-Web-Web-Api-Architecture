@@ -1,4 +1,5 @@
-﻿using App.DataAccess.Models;
+﻿using App.DataAccess.DbModels;
+using App.Models.CommonModels;
 using App.Models.ViewModels;
 using AutoMapper;
 
@@ -9,6 +10,8 @@ namespace App.Services.MapperProfiles
         public SampleProfile()
         {
             CreateMap<TestTable, SampleViewModel>().ReverseMap();
+
+            CreateMap<AspNetUsers, RegisterUserBindingModel>().ReverseMap();
         }
     }
 }

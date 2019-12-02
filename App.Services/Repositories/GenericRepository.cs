@@ -1,4 +1,4 @@
-﻿using App.DataAccess.Models;
+﻿using App.DataAccess.DbModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace App.Services.Repositories
 {
-  public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         #region Properties
         private FindTheGarageContext dataContext;

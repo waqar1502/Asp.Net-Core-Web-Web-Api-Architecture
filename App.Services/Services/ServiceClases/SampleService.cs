@@ -1,4 +1,4 @@
-﻿using App.DataAccess.Models;
+﻿using App.DataAccess.DbModels;
 using App.Models.ViewModels;
 using App.Services.Repositories;
 using App.Services.Services.Interfaces;

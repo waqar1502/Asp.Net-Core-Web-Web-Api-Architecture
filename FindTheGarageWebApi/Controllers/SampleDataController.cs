@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FindTheGarageWebApi.Controllers
 {
-    [Route("api/v1/user/Chatbot")]
+    [Route("api/v1/Sample")]
    //// [Authorize]
     public class SampleDataController : ApiBaseController
     {

@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using App.DataAccess.Models;
 using Autofac;
 using App.Services;
 using Autofac.Extensions.DependencyInjection;
@@ -51,22 +49,27 @@ namespace FindTheGarageWebApi
                     });
             });
 
-            services.AddDbContext<FindTheGarageContext>(options =>
+            services.AddDbContext<App.DataAccess.DbModels.FindTheGarageContext>(options =>
                  options.UseSqlServer(
                      Configuration.GetConnectionString("FindTheGarageEntities")
                      ));
 
             // CONFIGURING IDENTITY
-            services.AddDefaultIdentity<IdentityUser>(options =>
-            {
-                options.Password.RequiredLength = 8;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireDigit = false;
-            })
-                .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<FindTheGarageContext>();
+            ////services.AddIdentityCore<App.DataAccess.Identity.AspNetUsers>(options =>
+            ////{
+            ////    options.Password.RequiredLength = 8;
+            ////    options.Password.RequireLowercase = false;
+            ////    options.Password.RequireUppercase = false;
+            ////    options.Password.RequireNonAlphanumeric = false;
+            ////    options.Password.RequireDigit = false;
+            ////})
+            ////.AddDefaultTokenProviders()
+            ////    .AddDefaultUI(UIFramework.Bootstrap4)
+            ////    .AddEntityFrameworkStores<FindTheGarageContext>();
+
+            services.AddIdentity<App.DataAccess.Identity.AspNetUsers,  App.DataAccess.Identity.AspNetRoles> ()
+               .AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<App.DataAccess.DbModels.FindTheGarageContext>();
 
             // Get options from app settings
             IConfigurationSection jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));

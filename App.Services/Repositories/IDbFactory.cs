@@ -1,4 +1,4 @@
-﻿using App.DataAccess.Models;
+﻿using App.DataAccess.DbModels;
 
 namespace App.Services.Repositories
 {
